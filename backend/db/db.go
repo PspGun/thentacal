@@ -1,6 +1,7 @@
 package db
 
 import (
+	"github.com/PspGun/thentacal/type/database"
 	"os"
 
 	"gorm.io/driver/postgres"
@@ -9,18 +10,12 @@ import (
 
 var DB *gorm.DB
 
-type User struct {
-	Id       int64  `json:"id"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	Secret   string `json:"secret"`
-}
-
-
 func DBsetup() (err error) {
+
 	dsn := os.Getenv("DB_ENV")
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	DB = db
-	db.AutoMigrate(&User{})
+	db.AutoMigrate(&database.User{})
+	db.AutoMigrate(&database.Report{})
 	return err
 }

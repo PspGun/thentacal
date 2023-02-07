@@ -1,49 +1,36 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"net/http"
-	"time"
+	"github.com/PspGun/thentacal/enpoint"
+	"log"
+	"os"
 
+	"github.com/PspGun/thentacal/Initialize"
 	"github.com/PspGun/thentacal/db"
+	"github.com/gofiber/fiber/v2"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	s := &http.Server{
-		Addr:           ":8080",
-		ReadTimeout:    10 * time.Second,
-		WriteTimeout:   10 * time.Second,
-		MaxHeaderBytes: 1 << 20,
+	if ok := os.Getenv("GO_ENV"); ok != "production" {
+		err := godotenv.Load(".env")
+		if err != nil {
+			log.Fatal("Error loading .env file")
+		}
 	}
+
+	app := fiber.New(fiber.Config{
+		UnescapePath: true,
+	})
 	err := db.DBsetup()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	
-	// dsn := "host=beta.pspgun.com user=fexel password=fexel1212312121 dbname=postgres-test port=5433 sslmode=disable TimeZone=Asia/Shanghai"
-	// db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})	
-	// 	if err != nil {
-	// 	panic(err)
-	// 	}else {
-    //     	fmt.Println("Connecting successful")
-    //     }
-	// userRepository := repository.NewRepositoryDB(db)
-	// userService := service.NewUserService(userRepository)
-	// userHandler := hd.NewUserHandler(userService)
+	api := app.Group("/api")
+	Initialize.Initialize(app)
+	enpoint.RegisterEnpoint(api)
+	app.Listen(":8000")
 
-	// http.HandleFunc("/signup", userHandler.SignUp)
-	// http.HandleFunc("/signin", userHandler.SignIn)
-	// http.HandleFunc("/listuser", userHandler.ListUsers)
-
-	http.HandleFunc("/", (func(w http.ResponseWriter, r *http.Request) {
-		response_value := map[string]any{"Message": "Hello, World"}
-		response, _ := json.Marshal(response_value)
-		w.Write(response)
-	}))
-
-	if err := s.ListenAndServe(); err != nil {
-		panic(err)
-	}
 }
