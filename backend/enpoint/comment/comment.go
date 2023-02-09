@@ -2,9 +2,10 @@ package comment
 
 import (
 	"fmt"
-	"github.com/PspGun/thentacal/db"
-	"github.com/PspGun/thentacal/type/database"
-	"github.com/PspGun/thentacal/type/req"
+
+	"github.com/fexcel/fexcel-backend/db"
+	"github.com/fexcel/fexcel-backend/type/database"
+	"github.com/fexcel/fexcel-backend/type/req"
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
 )

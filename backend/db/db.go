@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/PspGun/thentacal/type/database"
+	"github.com/fexcel/fexcel-backend/type/database"
 	"os"
 
 	"gorm.io/driver/postgres"

@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="254b4eda-4402-44ff-903e-3fd037686c21" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/enpoint/comment/comment.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enpoint/comment/report.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enpoint/index.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enpoint/user/signin.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/enpoint/user/signup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/type/database/comment.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/type/database/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/type/req/comment.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/type/req/prompt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/type/req/signin.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/type/req/signup.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init/init.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enpoint/comment/report.go" beforeDir="false" afterPath="$PROJECT_DIR$/enpoint/comment/report.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +22,7 @@
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../Program Files/Go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -60,7 +46,7 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/rubic/GitHub/thentacal/backend/enpoint/comment"
+    "last_opened_file_path": "C:/Users/rubic/GitHub/thentacal"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -73,6 +59,14 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="backend" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build github.com/PspGun/thentacal" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <working_directory value="$PROJECT_DIR$" />
@@ -80,6 +74,15 @@
       <package value="github.com/PspGun/thentacal" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="backend" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <recent_temporary>

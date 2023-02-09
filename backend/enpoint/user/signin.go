@@ -1,9 +1,10 @@
 package user
 
 import (
-	"github.com/PspGun/thentacal/db"
-	"github.com/PspGun/thentacal/type/database"
-	"github.com/PspGun/thentacal/type/req"
+	"github.com/fexcel/fexcel-backend/db"
+	"github.com/fexcel/fexcel-backend/type/database"
+	"github.com/fexcel/fexcel-backend/type/req"
+	"github.com/fexcel/fexcel-backend/utill"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -14,9 +15,17 @@ func Signin(ctx *fiber.Ctx) error {
 		return err
 	}
 	user := new(database.User)
-	result := db.DB.Where("username = ? AND password = ?", body.Username, body.Password).First(user)
-	if result.Error != nil {
-		return ctx.JSON("ERORR")
+	if utill.Valid(body.Username) {
+		result := db.DB.Where("email = ? AND password = ?", body.Username, body.Password).First(user)
+		if result.Error != nil {
+			return ctx.JSON("ERORR")
+		}
+		return ctx.JSON(user)
+	} else {
+		result := db.DB.Where("username = ? AND password = ?", body.Username, body.Password).First(user)
+		if result.Error != nil {
+			return ctx.JSON("ERORR")
+		}
+		return ctx.JSON(user)
 	}
-	return ctx.JSON(user)
 }
